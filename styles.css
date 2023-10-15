@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-family: monospace;
+    font-size: 10vmin;
+}
+
+section {
+    border: 2px black solid;
+    border-radius: 0.5vmin;
+    font-size: 4vmin;
+    margin: 4vmin;
+    padding: 2vmin;
+}
+
+button {
+    text-transform: uppercase;
+    background-color: yellow;
+    border-radius: 0.5vmin;
+    font-size: 2vmin;
+    font-family: Georgia;
+    margin: 5vmin;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: yellow;
+    text-decoration: underline;
+}
