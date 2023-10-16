@@ -1,8 +1,20 @@
 /*------------------------- constants -------------------------*/
 ///Object with list of words: 
 const WORDS = {
-
+    one: [],
+    two: [],
+    three: [],
+    four: []
 };
+
+// fetch('./assets/common.json')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
+
+
+fetch('https://github.com/dariusk/corpora/blob/master/data/words/common.json')
+.then((response) => response.json())
+.then((json) => console.log(json));
 
 
 /*------------------------- state variables -------------------------*/
@@ -37,6 +49,13 @@ function init () {
 function handleClick(event) {
 
 }
+
+
+// To-do: retrieve words from JSON file:
+
+
+
+// To-do: Randomly select a word from the word list:
 
 
 // To-do: checkWinner function:
