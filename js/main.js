@@ -7,14 +7,14 @@ const WORDS = {
     four: []
 };
 
-// fetch('./assets/common.json')
-//     .then((response) => response.json())
-//     .then((json) => console.log(json));
+fetch('./assets/common.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
 
-fetch('https://github.com/dariusk/corpora/blob/master/data/words/common.json')
-.then((response) => response.json())
-.then((json) => console.log(json));
+// fetch('https://github.com/dariusk/corpora/blob/master/data/words/common.json')
+// .then((response) => response.json())
+// .then((json) => console.log(json));
 
 
 /*------------------------- state variables -------------------------*/
