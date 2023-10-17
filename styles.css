@@ -24,6 +24,61 @@ section {
     padding: 2vmin;
 }
 
+section#word-container {
+    color: pink;
+    display: flex;
+    flex-direction: ;
+}
+
+section#keyboard-container {
+    color: green;
+
+    display: grid;
+    grid-template-rows: repeat(3, 10vmin);
+    grid-template-areas: 
+        "row1"
+        "row2"
+        "row3";
+}
+
+#keyboard-row-1 {
+    grid-area: row1;
+    display: flex;
+    justify-content: center;
+}
+
+#keyboard-row-2 {
+    grid-area: row2;
+    display: flex;
+    justify-content: center;
+}
+
+#keyboard-row-3 {
+    grid-area: row3;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.keyboard-letter {
+    position: relative;
+    border: 2px black solid;
+    border-radius: 0.5vmin;
+    margin: 0.5vmin;
+    padding: auto auto;
+    height: 5vmin;
+    width: 5vmin;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.keyboard-letter:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: lightgrey;
+}
+
 button {
     text-transform: uppercase;
     background-color: yellow;
