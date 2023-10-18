@@ -27,7 +27,7 @@ section {
 section#word-container {
     color: pink;
     display: flex;
-    flex-direction: ;
+    /* flex-direction: ; */
 }
 
 section#keyboard-container {
@@ -59,8 +59,6 @@ section#keyboard-container {
     justify-content: center;
 }
 
-
-
 .keyboard-letter {
     position: relative;
     border: 2px black solid;
@@ -71,6 +69,16 @@ section#keyboard-container {
     width: 5vmin;
     /* align-items: center; */
     /* justify-content: center; */
+}
+
+.correct {
+    color: green;
+    background-color: lightgreen;
+}
+
+.incorrect {
+    color: red;
+    background-color: lightcoral;
 }
 
 .keyboard-letter:hover {

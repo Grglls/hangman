@@ -1,4 +1,4 @@
-{
+const ALL_WORDS = {
   "description": "Common English words.",
   "commonWords":
     [

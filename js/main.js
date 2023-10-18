@@ -1,22 +1,9 @@
 /*------------------------- constants -------------------------*/
-// Set up empty array to take list of words:
-let ALL_WORDS = [];
+// Set up empty array to take list of words
+// const WORDS_SORTED = {};
 
-// Retrieve words from JSON file, save to array created above:
-fetch('./assets/common.json')
-    .then((response) => response.json())
-    .then((json) => {
-        console.log(json)
-        ALL_WORDS = json.commonWords;
-    });
-
-const WORDS_SORTED = {};
-
-setTimeout(console.log, 3000, ALL_WORDS[200]);
-
-// fetch('https://github.com/dariusk/corpora/blob/master/data/words/common.json')
-// .then((response) => response.json())
-// .then((json) => console.log(json));
+console.log(ALL_WORDS);
+console.log('All WORDS length: ' + ALL_WORDS.commonWords.length);
 
 
 /*------------------------- state variables -------------------------*/
@@ -54,6 +41,30 @@ function init () {
     state.incorrectGuesses = 0;
     state.guessedLetters = [];
     state.result = null;
+
+    // Remove correct and incorrect classes from the keyboard-letters when the game starts over.
+    
+    for (let i = 0; i < 3; i++) {
+        // const keyboardRowsss = elements.keyboardContainer.childNodes;
+        // let keyboardRow = keyboardRowsss[i*2 + 1];
+        const keyboardRowsss = elements.keyboardContainer.children;
+        let keyboardRow = [... keyboardRowsss[i].children];
+
+        // console.log('Keyboard row: ' + keyboardRowsss[i*2 + 1]);
+        console.log('Keyboard row: ' + keyboardRowsss[i]);
+        console.log(keyboardRow);
+        
+        for (const key of keyboardRow) {
+            if (key.classList.contains('correct')) {
+                key.classList.remove('correct');
+                console.log('Test 1');
+            } else if (key.classList.contains('incorrect')) {
+                key.classList.remove('incorrect');
+                console.log('Test 2');
+            };
+        };
+    };
+
     render();
 }
 
@@ -76,10 +87,18 @@ function handleClick(event) {
                 state.currentWord[i] = event.target.innerText;
             };
         };
+
+        // Add the class of correct to the letters that are in the word:
+        event.target.classList.add('correct');
+
     } else {
         // If the letter is NOT part of the word, increment the number of incorrect guesses:
         console.log('letter not part of word.');
         state.incorrectGuesses += 1;
+
+        // Add the class of incorrect to the letters that aren't in the word:
+        event.target.classList.add('incorrect');
+
     };
 
     // Check for winner:
@@ -110,9 +129,6 @@ function render() {
     renderDiagram();
 }
 
-
-// To-do: renderWord function: 
-// Build-out the word section by appending children. Children must be blank or show the correct letter.
 function renderWord() {
     // Clear out the current wordContainer:
     while (elements.wordContainer.firstChild != null)  {
@@ -126,6 +142,7 @@ function renderWord() {
         letterElement = document.createElement('div');
         letterElement.innerText = state.currentWord[i];
         letterElement.classList.add('keyboard-letter');
+        // Append the elements to the wordContainer in the DOM:
         elements.wordContainer.appendChild(letterElement);
     }
 }
@@ -139,7 +156,11 @@ function renderMessage() {
 // To-do: renderControls function: 
 // Update the colours of the keyboard keys for whether they are correct or incorrect guesses.
 function renderControls() {
-    //
+    // Add the class of correct to the letters that are in the word:
+    
+
+    // Add the class of incorrect to the letters that aren't in the word:
+
 }
 
 // To-do: renderDiagram function:
