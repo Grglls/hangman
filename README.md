@@ -12,8 +12,7 @@ Click the play again button to reset the game.
 
 
 ## Known Bugs:
-Clicking between keyboard keys highlights the whole row.
-
+Images not retrieved on github pages version.
 <!-- No known bugs. -->
 
 ## Future Development:

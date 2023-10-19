@@ -73,6 +73,8 @@ section#keyboard-container {
     height: 8vmin;
     width: 8vmin;
     text-align: center;
+    box-shadow: 5px 5px 2px rgb(100, 100, 100);
+
     /* align-items: center; */
     /* justify-content: center; */
 }
