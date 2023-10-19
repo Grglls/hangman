@@ -18,9 +18,7 @@ Clicking between keyboard keys highlights the whole row.
 
 ## Future Development:
 ### Short Term:
-* Randomly generated word
 * Winner message
-* Diagrams
 
 ### Long Term:
 * Themed word groups to choose from.

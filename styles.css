@@ -19,9 +19,14 @@ header {
 section {
     border: 2px black solid;
     border-radius: 0.5vmin;
-    font-size: 4vmin;
-    margin: 4vmin;
+    font-size: 6vmin;
+    margin: 2vmin;
     padding: 2vmin;
+}
+
+img {
+    height: 20vmin;
+    
 }
 
 section#word-container {
@@ -64,9 +69,10 @@ section#keyboard-container {
     border: 2px black solid;
     border-radius: 0.5vmin;
     margin: 0.5vmin;
-    padding: auto auto;
-    height: 5vmin;
-    width: 5vmin;
+    padding: auto;
+    height: 8vmin;
+    width: 8vmin;
+    text-align: center;
     /* align-items: center; */
     /* justify-content: center; */
 }
@@ -81,7 +87,7 @@ section#keyboard-container {
     background-color: lightcoral;
 }
 
-.keyboard-letter:hover {
+.keyboard-letter.unguessed:hover {
     cursor: pointer;
     text-decoration: underline;
     background-color: lightgrey;
@@ -91,7 +97,7 @@ button {
     text-transform: uppercase;
     background-color: yellow;
     border-radius: 0.5vmin;
-    font-size: 2vmin;
+    font-size: 4vmin;
     font-family: Georgia;
     margin: 5vmin;
 }
