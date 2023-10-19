@@ -1,3 +1,6 @@
+/*------------------------- version -------------------------*/
+console.log('version 0.5');
+
 /*------------------------- constants -------------------------*/
 // Word list sourced from:
 // https://github.com/dariusk/corpora/blob/master/data/words/common.json
