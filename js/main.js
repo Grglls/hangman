@@ -1,5 +1,5 @@
 /*------------------------- version -------------------------*/
-console.log('version 0.6');
+console.log('version 0.6.1');
 
 /*------------------------- constants -------------------------*/
 // Word list sourced from:
@@ -146,7 +146,8 @@ function render() {
 function renderDiagram() {
     // Set the image to that corresponding to the number of incorrect guesses:
     // elements.diagramContainer.innerHTML = `<img src="../assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
-    elements.diagramContainer.innerHTML = `<img src="Hangman/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
+    // elements.diagramContainer.innerHTML = `<img src="Hangman/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
+    elements.diagramContainer.innerHTML = `<img src="/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
 }
 
 
