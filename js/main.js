@@ -1,5 +1,5 @@
 /*------------------------- version -------------------------*/
-console.log('version 0.6.2');
+console.log('version 1.0');
 
 /*------------------------- constants -------------------------*/
 // Word list sourced from:
@@ -28,7 +28,7 @@ const state = {
 /*------------------------- cached elements  -------------------------*/
 const elements = {
     diagramContainer: document.getElementById('diagram-container'),
-    message: document.querySelector('h2'),
+    message: document.getElementById('message-container'),
     wordContainer: document.getElementById('word-container'),
     keyboardContainer: document.getElementById('keyboard-container'),
     playAgain: document.getElementById('play-again'),
@@ -44,7 +44,7 @@ init();
 
 
 function init () {
-    state.randomWord = randomWord(WORDS_SORTED);  //Consider bringing the word in already as uppercase here.
+    state.randomWord = randomWord(WORDS_SORTED);
     state.randomWordArray = state.randomWord.toUpperCase().split(""); // Change the word to upper case, convert to an array.
     state.currentWord = state.randomWord.split("").map((x) => '_'); // Create a blank array, same length as word.
     state.incorrectGuesses = 0;
@@ -75,6 +75,9 @@ function init () {
 function handleClick(event) {
     // If the event.target wasn't a keyboard letter, exit the function:
     if (event.target.classList.contains('keyboard-letter') === false) return;
+    
+    // If the game has already been won or lost, exit the function:
+    if (state.result !== null) return;
     
     // Add the clicked letter to the list of guessed letters:
     state.guessedLetters.push(event.target.innerText);
@@ -113,7 +116,7 @@ function handleClick(event) {
     render();
 }
 
-// Randomly select a word from an array:
+
 function randomWord(array) {
     randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
@@ -123,14 +126,11 @@ function randomWord(array) {
 function checkWinner(arguments) {
     // Check if all the guesses have been used up.
     if (state.incorrectGuesses === 7) {
-        console.log('loser');
         return 'loss';
         // Otherwise check if the currentWord array matches the randomWord array:
     } else if (state.currentWord.every((value, index) => value === state.randomWordArray[index])) {
-        console.log('winner');
         return 'win';
     } else {
-        console.log('no winner');
     }   return null;
 }
 
@@ -139,15 +139,11 @@ function render() {
     renderDiagram();
     renderWord();
     renderMessage();
-    renderControls();
 }
 
 
 function renderDiagram() {
     // Set the image to that corresponding to the number of incorrect guesses:
-    // elements.diagramContainer.innerHTML = `<img src="../assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
-    // elements.diagramContainer.innerHTML = `<img src="Hangman/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
-    // elements.diagramContainer.innerHTML = `<img src="/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
     elements.diagramContainer.innerHTML = `<img src="https://grglls.github.io/Hangman/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
 }
 
@@ -166,19 +162,16 @@ function renderWord() {
     }
 }
 
-// To-do: renderMessage function:
+
 function renderMessage() {
     // Either say 'guess a letter' or 'gameover' or 'winner'
     // Say whether to guess a letter or 
-    
+    if (state.result === null) {
+        elements.message.innerText = 'Guess a letter:';
+    } else if (state.result === 'win') {
+        elements.message.innerText = 'You win!';
+    } else if (state.result === 'loss') {
+        elements.message.innerText = 'You lose!';
+    }
 }
 
-// To-do: renderControls function: 
-// Update the colours of the keyboard keys for whether they are correct or incorrect guesses.
-function renderControls() {
-    // Add the class of correct to the letters that are in the word:
-    
-
-    // Add the class of incorrect to the letters that aren't in the word:
-
-}

@@ -12,15 +12,12 @@ Click the play again button to reset the game.
 
 
 ## Known Bugs:
-Images not retrieved on github pages version.
 <!-- No known bugs. -->
 
 ## Future Development:
 ### Short Term:
-* Winner message
 
 ### Long Term:
-* Themed word groups to choose from.
 * Points tracker.
 * Support for physical keyboard.
 * Typed whole word guesses.
