@@ -58,8 +58,8 @@ function init () {
         
         for (const key of keyboardRow) {
             // Remove 'correct' and 'incorrect' classes:
-            key.classList.remove('correct');
-            key.classList.remove('incorrect');
+            key.classList.remove('bg-red-500');
+            key.classList.remove('bg-green-500');
             
             // Add the 'unguessed' class back in if it's been removed:
             if (key.classList.contains('unguessed') === false) {
@@ -92,20 +92,22 @@ function handleClick(event) {
         };
 
         // Add the class of 'correct' to the letters that are in the word:
-        event.target.classList.add('correct');
-
+        // event.target.classList.add('correct');
+        event.target.classList.add('bg-green-500');
+        
         // ...and remove the class of 'unguessed' from the letter:
-        event.target.classList.remove('unguessed');
+        // event.target.classList.remove('unguessed');
         
     } else {
         // If the letter is NOT part of the word, increment the number of incorrect guesses:
         state.incorrectGuesses += 1;
         
         // Add the class of 'incorrect' to the letters that aren't in the word:
-        event.target.classList.add('incorrect');
+        // event.target.classList.add('incorrect');
+        event.target.classList.add('bg-red-500');
 
         // ...and remove the class of 'unguessed' from the letter:
-        event.target.classList.remove('unguessed');
+        // event.target.classList.remove('unguessed');
 
     };
 
@@ -157,6 +159,7 @@ function renderWord() {
         letterElement = document.createElement('div');
         letterElement.innerText = state.currentWord[i];
         letterElement.classList.add('keyboard-letter');
+        letterElement.classList.add('p-3', 'bg-white', 'shadow', 'rounded-lg', 'bg-yellow-500');
         // Append the elements to the wordContainer in the DOM:
         elements.wordContainer.appendChild(letterElement);
     }

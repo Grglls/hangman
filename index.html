@@ -4,56 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/common.js"></script>
     <script defer src="js/main.js"></script>
 </head>
-<body>
-    <header>Hangman</header>
+<body class="space-y-4 p-3 font-mono bg-slate-800 text-slate-100 sm:grid sm:grid-cols-2 sm:gap-x-4">
+    <header class="pt-6 p-3 font-semibold text-center space-y-4 sm:col-span-2">Hangman</header>
     
-    <section id="diagram-container"></section>
+    <section 
+        class="space-y-4 p-3 bg-slate-700 shadow rounded-lg text-center" 
+        id="diagram-container"
+    >
+    </section>
     
-    <section id="message-container"></section>
+    <section 
+        class="space-y-4 p-3 bg-slate-700 shadow rounded-lg text-center"
+        id="message-container"
+    >
+    </section>
     
-    <section id="word-container"></section>
-
-    <section id="keyboard-container">
-        <div id="keyboard-row-1">
-            <div class="keyboard-letter">Q</div>
-            <div class="keyboard-letter">W</div>
-            <div class="keyboard-letter">E</div>
-            <div class="keyboard-letter">R</div>
-            <div class="keyboard-letter">T</div>
-            <div class="keyboard-letter">Y</div>
-            <div class="keyboard-letter">U</div>
-            <div class="keyboard-letter">I</div>
-            <div class="keyboard-letter">O</div>
-            <div class="keyboard-letter">P</div>
-        </div>
-
-        <div id="keyboard-row-2">
-            <div class="keyboard-letter">A</div>
-            <div class="keyboard-letter">S</div>
-            <div class="keyboard-letter">D</div>
-            <div class="keyboard-letter">F</div>
-            <div class="keyboard-letter">G</div>
-            <div class="keyboard-letter">H</div>
-            <div class="keyboard-letter">J</div>
-            <div class="keyboard-letter">K</div>
-            <div class="keyboard-letter">L</div>
-        </div>
-
-        <div id="keyboard-row-3">
-            <div class="keyboard-letter">Z</div>
-            <div class="keyboard-letter">X</div>
-            <div class="keyboard-letter">C</div>
-            <div class="keyboard-letter">V</div>
-            <div class="keyboard-letter">B</div>
-            <div class="keyboard-letter">N</div>
-            <div class="keyboard-letter">M</div>
-        </div>
+    <section 
+        class="p-3 bg-slate-700 shadow rounded-lg text-center text-slate-900 flex gap-2 justify-center" 
+        id="word-container"
+    >
     </section>
 
-    <button id="play-again">Play Again</button>
+    <section 
+        class="space-y-4 p-3 bg-slate-700 shadow rounded-lg text-center text-slate-900" 
+        id="keyboard-container">
+        
+        <div id="keyboard-row-1" class="flex gap-2 justify-center">
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">Q</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">W</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">E</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">R</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">T</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">Y</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">U</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">I</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">O</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">P</div>
+        </div>
+
+        <div id="keyboard-row-2" class="flex gap-2 justify-center">
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">A</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">S</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">D</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">F</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">G</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">H</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">J</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">K</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">L</div>
+        </div>
+
+        <div id="keyboard-row-3" class="flex gap-2 justify-center">
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">Z</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">X</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">C</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">V</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">B</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">N</div>
+            <div class="keyboard-letter p-3 bg-white shadow rounded-lg">M</div>
+        </div>
+
+    </section>
+
+    <button class="rounded-lg bg-yellow-500 p-2 content-center" id="play-again">Play Again</button>
 </body>
 </html>
