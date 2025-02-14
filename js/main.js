@@ -31,11 +31,11 @@ const elements = {
   messageContainer: document.getElementById('message-container'),
   wordContainer: document.getElementById('word-container'),
   keyboardContainer: document.getElementById('keyboard-container'),
-  playAgain: document.getElementById('play-again'),
+  playAgainButton: document.getElementById('play-again'),
 };
 
 /*------------------------- event listeners -------------------------*/
-elements.playAgain.addEventListener('click', init);
+elements.playAgainButton.addEventListener('click', init);
 elements.keyboardContainer.addEventListener('click', handleClick);
 
 
