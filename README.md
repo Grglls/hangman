@@ -15,6 +15,9 @@ Click the play again button to reset the game.
 
 ## Future Development:
 ### Short Term:
+* Add support for keyboard typing of letters.
+* Add support for keyboard enter key to submit guess.
+* Add sounds for incorrect guess, correct guess & game over.
 
 ### Long Term:
 * Points tracker.
