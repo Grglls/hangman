@@ -28,7 +28,7 @@ const state = {
 /*------------------------- cached elements  -------------------------*/
 const elements = {
   diagramContainer: document.getElementById('diagram-container'),
-  message: document.getElementById('message-container'),
+  messageContainer: document.getElementById('message-container'),
   wordContainer: document.getElementById('word-container'),
   keyboardContainer: document.getElementById('keyboard-container'),
   playAgain: document.getElementById('play-again'),
@@ -170,10 +170,10 @@ function renderMessage() {
   // Either say 'guess a letter' or 'gameover' or 'winner'
   // Say whether to guess a letter or 
   if (state.result === null) {
-    elements.message.innerText = 'Guess a letter:';
+    elements.messageContainer.innerText = 'Guess a letter:';
   } else if (state.result === 'win') {
-    elements.message.innerText = 'You win!';
+    elements.messageContainer.innerText = 'You win!';
   } else if (state.result === 'loss') {
-    elements.message.innerText = 'You lose!';
+    elements.messageContainer.innerText = 'You lose!';
   }
 }
