@@ -109,15 +109,16 @@ function randomWord(array) {
 }
 
 
-function checkWinner(arguments) {
+function checkWinner() {
   // Check if all the guesses have been used up.
   if (state.incorrectGuesses === 7) {
     return 'loss';
-    // Otherwise check if the currentWord array matches the randomWord array:
+  // Otherwise check if the currentWord array matches the randomWord array:
   } else if (state.currentWord.every((value, index) => value === state.randomWordArray[index])) {
     return 'win';
-  } else {
-  }   return null;
+  }
+
+  return null;
 }
 
 
