@@ -144,7 +144,7 @@ function renderWord() {
     letterElement = document.createElement('div');
     letterElement.innerText = state.currentWord[i];
     letterElement.classList.add('keyboard-letter');
-    letterElement.classList.add('p-3', 'bg-white', 'shadow', 'rounded-lg', 'bg-yellow-500');
+    letterElement.classList.add('p-3', 'shadow', 'rounded-lg', 'bg-yellow-500');
     // Append the elements to the wordContainer in the DOM:
     elements.wordContainer.appendChild(letterElement);
   }
