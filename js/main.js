@@ -82,16 +82,16 @@ function handleClick(event) {
     // If the letter is part of the word, update the blank array to 'reveal' the letter:
     for (let i = 0; i < state.randomWordArray.length; i++) {
       if (state.randomWordArray[i] === event.target.innerText) {
-          state.currentWord[i] = event.target.innerText;
+        state.currentWord[i] = event.target.innerText;
       };
     };
-    // Add the class of 'correct' to the letters that are in the word:
+    // Change colour to green for letters in the word:
     event.target.classList.add('bg-green-500');
   } else {
     // If the letter is NOT part of the word, increment the number of incorrect guesses:
     state.incorrectGuesses += 1;
     
-    // Add the class of 'incorrect' to the letters that aren't in the word:
+    // Change colour to red for letters not in the word:
     event.target.classList.add('bg-red-500');
   };
 
