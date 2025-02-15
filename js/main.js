@@ -131,7 +131,8 @@ function render() {
 
 function renderDiagram() {
   // Set the image to that corresponding to the number of incorrect guesses:
-  elements.diagramContainer.innerHTML = `<img src="https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg" alt="${ state.incorrectGuesses } incorrect guesses">`;
+  elements.diagramContainer.innerHTML = `<img src="https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg" 
+    alt="${ state.incorrectGuesses } incorrect guesses">`;
 }
 
 
