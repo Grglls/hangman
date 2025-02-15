@@ -153,7 +153,6 @@ function renderWord() {
 
 function renderMessage() {
   // Either say 'guess a letter' or 'gameover' or 'winner'
-  // Say whether to guess a letter or 
   if (state.result === null) {
     elements.messageContainer.innerText = 'Guess a letter:';
   } else if (state.result === 'win') {
