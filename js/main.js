@@ -159,6 +159,6 @@ function renderMessage() {
   } else if (state.result === 'win') {
     elements.messageContainer.innerText = 'You win!';
   } else if (state.result === 'loss') {
-    elements.messageContainer.innerText = 'You lose!';
+    elements.messageContainer.innerText = 'Game Over!';
   }
 }
