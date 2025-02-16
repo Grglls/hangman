@@ -54,7 +54,7 @@ function init () {
   // Reset the colouring of the keyboard-letters when the game starts over:
   for (let i = 0; i < 3; i++) {
     const keyboardRows = elements.keyboardContainer.children;
-    let keyboardRow = [... keyboardRows[i].children];
+    let keyboardRow = keyboardRows[i].children;
     
     for (const key of keyboardRow) {
       // Remove and red and green backgrounds for letters guessed:
