@@ -57,9 +57,11 @@ function init () {
     let keyboardRow = [... keyboardRows[i].children];
     
     for (const key of keyboardRow) {
-      // Remove the classes used to colour the correct and incorrect guesses:
+      // Remove and red and green backgrounds for letters guessed:
       key.classList.remove('bg-red-500');
       key.classList.remove('bg-green-500');
+      // Re-add the white background class back in:
+      key.classList.add('bg-white');
     };
   };
 
@@ -85,13 +87,15 @@ function handleClick(event) {
         state.currentWord[i] = event.target.innerText;
       };
     };
-    // Change colour to green for letters in the word:
+    // Change background colour to green for letters in the word:
+    event.target.classList.remove('bg-white');
     event.target.classList.add('bg-green-500');
   } else {
     // If the letter is NOT part of the word, increment the number of incorrect guesses:
     state.incorrectGuesses += 1;
     
-    // Change colour to red for letters not in the word:
+    // Change background colour to red for letters not in the word:
+    event.target.classList.remove('bg-white');
     event.target.classList.add('bg-red-500');
   };
 
