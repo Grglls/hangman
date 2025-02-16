@@ -27,7 +27,7 @@ const state = {
 
 /*------------------------- cached elements  -------------------------*/
 const elements = {
-  diagramContainer: document.getElementById('diagram-container'),
+  diagram: document.getElementById('diagram'),
   messageContainer: document.getElementById('message-container'),
   wordContainer: document.getElementById('word-container'),
   keyboardContainer: document.getElementById('keyboard-container'),
@@ -131,8 +131,8 @@ function render() {
 
 function renderDiagram() {
   // Set the image to that corresponding to the number of incorrect guesses:
-  elements.diagramContainer.innerHTML = `<img src="https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg" 
-    alt="${ state.incorrectGuesses } incorrect guesses">`;
+  elements.diagram.setAttribute('src', `https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg`);
+  elements.diagram.setAttribute('alt', `${ state.incorrectGuesses } incorrect guesses`);
 }
 
 
