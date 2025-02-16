@@ -167,8 +167,6 @@ function renderKeyboard() {
     let keyboardRow = keyboardRows[i].children;
     
     for (const key of keyboardRow) {
-      // console.log(key.innerText);
-
       if (state.currentWord.includes(key.innerText) && state.guessedLetters.includes(key.innerText)) {
         console.log('in the true')
         // Change background colour to green for letters in the word:
