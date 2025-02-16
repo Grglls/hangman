@@ -79,25 +79,18 @@ function handleClick(event) {
   // Add the clicked letter to the list of guessed letters:
   state.guessedLetters.push(event.target.innerText);
 
-  // Check if the guessed letter is part of the secret word:
-  if (state.randomWordArray.includes(event.target.innerText)) {
-    // If the letter is part of the word, update the blank array to 'reveal' the letter:
-    for (let i = 0; i < state.randomWordArray.length; i++) {
-      if (state.randomWordArray[i] === event.target.innerText) {
-        state.currentWord[i] = event.target.innerText;
-      };
-    };
-    // Change background colour to green for letters in the word:
-    event.target.classList.remove('bg-white');
-    event.target.classList.add('bg-green-500');
-  } else {
-    // If the letter is NOT part of the word, increment the number of incorrect guesses:
-    state.incorrectGuesses += 1;
-    
-    // Change background colour to red for letters not in the word:
-    event.target.classList.remove('bg-white');
-    event.target.classList.add('bg-red-500');
-  };
+ // Check if the guessed letter is part of the secret word:
+ if (state.randomWordArray.includes(event.target.innerText)) {
+   // If the letter is part of the word, update the blank array to 'reveal' the letter:
+   for (let i = 0; i < state.randomWordArray.length; i++) {
+     if (state.randomWordArray[i] === event.target.innerText) {
+       state.currentWord[i] = event.target.innerText;
+     };
+   };
+ } else {
+   // If the letter is NOT part of the word, increment the number of incorrect guesses:
+   state.incorrectGuesses += 1;
+ };
 
   // Check for winner:
   state.result = checkWinner();
@@ -130,6 +123,7 @@ function render() {
   renderDiagram();
   renderWord();
   renderMessage();
+  renderKeyboard();
 }
 
 
@@ -165,4 +159,26 @@ function renderMessage() {
   } else if (state.result === 'loss') {
     elements.messageContainer.innerText = 'Game Over!';
   }
+}
+
+function renderKeyboard() {
+  for (let i = 0; i < 3; i++) {
+    const keyboardRows = elements.keyboardContainer.children;
+    let keyboardRow = keyboardRows[i].children;
+    
+    for (const key of keyboardRow) {
+      // console.log(key.innerText);
+
+      if (state.currentWord.includes(key.innerText) && state.guessedLetters.includes(key.innerText)) {
+        console.log('in the true')
+        // Change background colour to green for letters in the word:
+        key.classList.remove('bg-white');
+        key.classList.add('bg-green-500');
+      } else if (state.guessedLetters.includes(key.innerText)) {
+        // Change background colour to red for letters not in the word:
+        key.classList.remove('bg-white');
+        key.classList.add('bg-red-500');
+      };
+    };
+  };
 }
