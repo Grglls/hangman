@@ -13,7 +13,6 @@ for (let i = 0; i < ALL_WORDS.commonWords.length; i++) {
   };
 };
 
-
 /*------------------------- state variables -------------------------*/
 const state = {
   randomWord: null,
@@ -23,7 +22,6 @@ const state = {
   guessedLetters: null,
   result: null,
 };
-
 
 /*------------------------- cached elements  -------------------------*/
 const elements = {
@@ -39,10 +37,8 @@ elements.playAgainButton.addEventListener('click', init);
 elements.keyboardContainer.addEventListener('click', handleClick);
 document.addEventListener('keydown', handleKeypress);
 
-
 /*------------------------- functions -------------------------*/
 init();
-
 
 function init () {
   state.randomWord = randomWord(WORDS_SORTED);
@@ -56,7 +52,7 @@ function init () {
   for (let i = 0; i < 3; i++) {
     const keyboardRows = elements.keyboardContainer.children;
     let keyboardRow = keyboardRows[i].children;
-    
+
     for (const key of keyboardRow) {
       // Remove and red and green backgrounds for letters guessed:
       key.classList.remove('bg-red-500');
@@ -69,35 +65,32 @@ function init () {
   render();
 }
 
-
 function handleClick(event) {
   // If the event.target wasn't a keyboard letter, exit the function:
   if (event.target.classList.contains('keyboard-letter') === false) return;
-  
+
   // If the game has already been won or lost, exit the function:
   if (state.result !== null) return;
-  
+
   // Check if the letter was in the word:
   checkLetter(event.target.innerText);
 }
-
 
 function handleKeypress(event) {
   // If the game has already been won or lost, exit the function:
   if (state.result !== null) return;
 
   // Only run for keys that are a letter:
-  if (event.keyCode >= 65 && event.keyCode <= 90) {  
+  if (event.keyCode >= 65 && event.keyCode <= 90) {
     // Check if the letter was in the word:
     checkLetter(event.key.toUpperCase());
   };
 }
 
-
 function checkLetter(letter) {
   // If the letter has already been guessed, exit the function:
   if (state.guessedLetters.includes(letter)) return;
-  
+
   // Add the clicked letter to the list of guessed letters:
   state.guessedLetters.push(letter);
 
@@ -121,12 +114,10 @@ function checkLetter(letter) {
   render();
 }
 
-
 function randomWord(array) {
   randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
 }
-
 
 function checkWinner() {
   // Check if all the guesses have been used up.
@@ -140,7 +131,6 @@ function checkWinner() {
   return null;
 }
 
-
 function render() {
   renderDiagram();
   renderWord();
@@ -148,13 +138,11 @@ function render() {
   renderKeyboard();
 }
 
-
 function renderDiagram() {
   // Set the image to that corresponding to the number of incorrect guesses:
   elements.diagram.setAttribute('src', `https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg`);
   elements.diagram.setAttribute('alt', `${ state.incorrectGuesses } incorrect guesses`);
 }
-
 
 function renderWord() {
   // Clear out the current wordContainer:
@@ -175,7 +163,6 @@ function renderWord() {
   }
 }
 
-
 function renderMessage() {
   // Either say 'guess a letter' or 'gameover' or 'winner'
   if (state.result === null) {
@@ -191,7 +178,7 @@ function renderKeyboard() {
   for (let i = 0; i < 3; i++) {
     const keyboardRows = elements.keyboardContainer.children;
     let keyboardRow = keyboardRows[i].children;
-    
+
     for (const key of keyboardRow) {
       if (state.currentWord.includes(key.innerText) && state.guessedLetters.includes(key.innerText)) {
         // Change background colour to green for letters in the word:
@@ -210,7 +197,6 @@ function renderKeyboard() {
     };
   };
 }
-
 
 function animateLetter(letterEl) {
   letterEl.classList.add('-translate-y-4', 'scale-150');
