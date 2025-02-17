@@ -133,8 +133,8 @@ function checkWinner() {
 
 function render() {
   renderDiagram();
-  renderWord();
   renderMessage();
+  renderWord();
   renderKeyboard();
 }
 
@@ -142,6 +142,17 @@ function renderDiagram() {
   // Set the image to that corresponding to the number of incorrect guesses:
   elements.diagram.setAttribute('src', `https://grglls.github.io/hangman/assets/Hangman ${ state.incorrectGuesses }.svg`);
   elements.diagram.setAttribute('alt', `${ state.incorrectGuesses } incorrect guesses`);
+}
+
+function renderMessage() {
+  // Either say 'guess a letter' or 'gameover' or 'winner'
+  if (state.result === null) {
+    elements.messageContainer.innerText = 'Guess a letter:';
+  } else if (state.result === 'win') {
+    elements.messageContainer.innerText = 'You win!';
+  } else if (state.result === 'loss') {
+    elements.messageContainer.innerText = 'Game Over!';
+  }
 }
 
 function renderWord() {
@@ -160,17 +171,6 @@ function renderWord() {
     if (letterElement.innerText === state.guessedLetters[state.guessedLetters.length-1]) {
       animateLetter(letterElement);
     }
-  }
-}
-
-function renderMessage() {
-  // Either say 'guess a letter' or 'gameover' or 'winner'
-  if (state.result === null) {
-    elements.messageContainer.innerText = 'Guess a letter:';
-  } else if (state.result === 'win') {
-    elements.messageContainer.innerText = 'You win!';
-  } else if (state.result === 'loss') {
-    elements.messageContainer.innerText = 'Game Over!';
   }
 }
 
