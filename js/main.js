@@ -37,6 +37,7 @@ const elements = {
 /*------------------------- event listeners -------------------------*/
 elements.playAgainButton.addEventListener('click', init);
 elements.keyboardContainer.addEventListener('click', handleClick);
+document.addEventListener('keydown', handleKeypress);
 
 
 /*------------------------- functions -------------------------*/
@@ -79,6 +80,19 @@ function handleClick(event) {
   // Check if the letter was in the word:
   checkLetter(event.target.innerText);
 }
+
+
+function handleKeypress(event) {
+  // If the game has already been won or lost, exit the function:
+  if (state.result !== null) return;
+  
+  // Only run for keys that are a letter:
+  if (event.keyCode >= 65 && event.keyCode <= 90) {  
+    // Check if the letter was in the word:
+    checkLetter(event.key.toUpperCase());
+  };
+}
+
 
 function checkLetter(letter) {
   // Add the clicked letter to the list of guessed letters:
