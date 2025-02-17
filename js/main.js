@@ -76,21 +76,26 @@ function handleClick(event) {
   // If the game has already been won or lost, exit the function:
   if (state.result !== null) return;
   
-  // Add the clicked letter to the list of guessed letters:
-  state.guessedLetters.push(event.target.innerText);
+  // Check if the letter was in the word:
+  checkLetter(event.target.innerText);
+}
 
- // Check if the guessed letter is part of the secret word:
- if (state.randomWordArray.includes(event.target.innerText)) {
-   // If the letter is part of the word, update the blank array to 'reveal' the letter:
-   for (let i = 0; i < state.randomWordArray.length; i++) {
-     if (state.randomWordArray[i] === event.target.innerText) {
-       state.currentWord[i] = event.target.innerText;
-     };
-   };
- } else {
-   // If the letter is NOT part of the word, increment the number of incorrect guesses:
-   state.incorrectGuesses += 1;
- };
+function checkLetter(letter) {
+  // Add the clicked letter to the list of guessed letters:
+  state.guessedLetters.push(letter);
+
+  // Check if the guessed letter is part of the secret word:
+  if (state.randomWordArray.includes(letter)) {
+    // If the letter is part of the word, update the blank array to 'reveal' the letter:
+    for (let i = 0; i < state.randomWordArray.length; i++) {
+      if (state.randomWordArray[i] === letter) {
+        state.currentWord[i] = letter;
+      };
+    };
+  } else {
+    // If the letter is NOT part of the word, increment the number of incorrect guesses:
+    state.incorrectGuesses += 1;
+  };
 
   // Check for winner:
   state.result = checkWinner();
