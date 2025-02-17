@@ -173,7 +173,6 @@ function renderKeyboard() {
     
     for (const key of keyboardRow) {
       if (state.currentWord.includes(key.innerText) && state.guessedLetters.includes(key.innerText)) {
-        console.log('in the true')
         // Change background colour to green for letters in the word:
         key.classList.remove('bg-white');
         key.classList.add('bg-green-500');
