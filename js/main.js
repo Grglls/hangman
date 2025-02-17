@@ -198,6 +198,19 @@ function renderKeyboard() {
         key.classList.remove('bg-white');
         key.classList.add('bg-red-500');
       };
+      // Do animation for the most recent guessed letter:
+      if (key.innerText === state.guessedLetters[state.guessedLetters.length-1]) {
+        console.log('Last letter pressed was: ', key.innerText);
+        animateLetter(key);
+      }
     };
   };
+}
+
+
+function animateLetter(letterEl) {
+  letterEl.classList.add('-translate-y-4', 'scale-150');
+  setTimeout(() => {
+    letterEl.classList.remove('-translate-y-4', 'scale-150');
+  }, 300)
 }
