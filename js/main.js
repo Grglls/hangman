@@ -85,7 +85,7 @@ function handleClick(event) {
 function handleKeypress(event) {
   // If the game has already been won or lost, exit the function:
   if (state.result !== null) return;
-  
+
   // Only run for keys that are a letter:
   if (event.keyCode >= 65 && event.keyCode <= 90) {  
     // Check if the letter was in the word:
@@ -95,6 +95,9 @@ function handleKeypress(event) {
 
 
 function checkLetter(letter) {
+  // If the letter has already been guessed, exit the function:
+  if (state.guessedLetters.includes(letter)) return;
+  
   // Add the clicked letter to the list of guessed letters:
   state.guessedLetters.push(letter);
 
