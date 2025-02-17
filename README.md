@@ -1,5 +1,5 @@
 # Hangman In Browser Game - Version 1.0
-https://grglls.github.io/Hangman/
+https://grglls.github.io/hangman/
 
 This website is a broswer version of the game 'Hangman' made using HTML, CSS and JavaScript.
 
