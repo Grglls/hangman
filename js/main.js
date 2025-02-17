@@ -168,6 +168,10 @@ function renderWord() {
     letterElement.classList.add('p-3', 'shadow', 'rounded-lg', 'bg-yellow-500');
     // Append the elements to the wordContainer in the DOM:
     elements.wordContainer.appendChild(letterElement);
+    // Do animation for the most recent guessed letter:
+    if (letterElement.innerText === state.guessedLetters[state.guessedLetters.length-1]) {
+      animateLetter(letterElement);
+    }
   }
 }
 
