@@ -80,6 +80,11 @@ function handleKeypress(event) {
   // If the game has already been won or lost, exit the function:
   if (state.result !== null) return;
 
+  // If the keys are Shift+Enter, start a new game:
+  if (event.key === 'Enter' && event.shiftKey === true) {
+    init();
+  }
+
   // Only run for keys that are a letter:
   if (event.keyCode >= 65 && event.keyCode <= 90) {
     // Check if the letter was in the word:
