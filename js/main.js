@@ -177,6 +177,11 @@ function renderWord() {
       animateRevealLetter(letterElement);
     }
   }
+  
+  // If the game has been won, run the winning animation:
+  if (state.result === 'win') {
+    animateWinGame(elements.wordContainer);
+  }
 }
 
 function renderKeyboard() {
@@ -216,4 +221,23 @@ function animateRevealLetter(letterEl) {
     // letterEl.classList.remove('-translate-y-4', 'scale-150');
     letterEl.classList.remove('animate-ping');
   }, 300)
+}
+
+function animateWinGame(wordEl) {
+  for (let i = 0; i < wordEl.children.length; i++) {
+    setTimeout(() => {
+      wordEl.children[i].classList.add('-translate-y-4');
+    }, 100 * i);
+    setTimeout(() => {
+      wordEl.children[i].classList.remove('-translate-y-4');
+    }, 100 * i + 200);
+  }
+  for (let i = 0; i < wordEl.children.length; i++) {
+    setTimeout(() => {
+      wordEl.children[i].classList.add('scale-115');
+    }, 100 * wordEl.children.length + 500);
+    setTimeout(() => {
+      wordEl.children[i].classList.remove('scale-115');
+    }, 100 * wordEl.children.length + 1000);
+  }
 }
