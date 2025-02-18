@@ -174,7 +174,7 @@ function renderWord() {
     elements.wordContainer.appendChild(letterElement);
     // Do animation for the most recent guessed letter:
     if (letterElement.innerText === state.guessedLetters[state.guessedLetters.length-1]) {
-      animateLetter(letterElement);
+      animateRevealLetter(letterElement);
     }
   }
 }
@@ -206,5 +206,14 @@ function animateLetter(letterEl) {
   letterEl.classList.add('-translate-y-4', 'scale-150');
   setTimeout(() => {
     letterEl.classList.remove('-translate-y-4', 'scale-150');
+  }, 300)
+}
+
+function animateRevealLetter(letterEl) {
+  // letterEl.classList.add('-translate-y-4', 'scale-150');
+  letterEl.classList.add('animate-ping');
+  setTimeout(() => {
+    // letterEl.classList.remove('-translate-y-4', 'scale-150');
+    letterEl.classList.remove('animate-ping');
   }, 300)
 }
