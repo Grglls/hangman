@@ -196,7 +196,6 @@ function renderKeyboard() {
       };
       // Do animation for the most recent guessed letter:
       if (key.innerText === state.guessedLetters[state.guessedLetters.length-1]) {
-        console.log('Last letter pressed was: ', key.innerText);
         animateLetter(key);
       }
     };
