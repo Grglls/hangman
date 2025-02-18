@@ -207,12 +207,10 @@ function renderKeyboard() {
 }
 
 function animateKeypress(letterEl) {
-  letterEl.classList.add('-translate-y-4', 'scale-150', 'ease-in-out');
-  // letterEl.classList.add('-translate-y-4', 'scale-150');
+  letterEl.classList.add('-translate-y-4', 'scale-150');
   setTimeout(() => {
-    letterEl.classList.remove('-translate-y-4', 'scale-150', 'ease-in-out');
-    // letterEl.classList.remove('-translate-y-4', 'scale-150');
-  }, 300)
+    letterEl.classList.remove('-translate-y-4', 'scale-150');
+  }, 200)
 }
 
 function animateRevealLetter(letterEl) {
