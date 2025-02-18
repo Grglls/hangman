@@ -181,6 +181,10 @@ function renderWord() {
   if (state.result === 'win') {
     animateWinGame(elements.wordContainer);
   }
+  // If the game has been lost, run the winning animation:
+  if (state.result === 'loss') {
+    animateLoseGame(elements.wordContainer);
+  }
 }
 
 function renderKeyboard() {
@@ -236,5 +240,18 @@ function animateWinGame(wordEl) {
     setTimeout(() => {
       wordEl.children[i].classList.remove('scale-115');
     }, 100 * wordEl.children.length + 1000);
+  }
+}
+
+function animateLoseGame(wordEl) {
+  for (let i = 0; i < wordEl.children.length; i++) {
+    if (state.currentWord[i] !== state.randomWordArray[i]) {
+      wordEl.children[i].classList.remove('bg-yellow-500');
+      wordEl.children[i].classList.add('duration-1500', 'bg-red-500', 'scale-115');
+      wordEl.children[i].innerText = state.randomWordArray[i];
+      setTimeout(() => {
+        wordEl.children[i].classList.remove('scale-115');
+      }, 1500);
+    }
   }
 }
