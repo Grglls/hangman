@@ -6,20 +6,21 @@ This website is a broswer version of the game 'Hangman' made using HTML, CSS and
 The game adopts the Model-View-Controller (MVC) approach for the game's architecture.
 
 ## How to Play:
-Guess the randomly generated word letter by letter. Click the letters on the keyboard to guess a letter. Complete the word before getting seven incorrect guesses to win.
-
-Click the play again button to reset the game.
+* Guess the randomly generated word letter by letter. 
+* Guess a letter by typing on the physical keyboard or clicking on the virtual keyboard.
+* Complete the word before getting seven incorrect guesses to win.
+* Start a new game by clicking the play again button pressing Shift + Enter.
 
 ## Known Bugs:
-<!-- No known bugs. -->
+No known bugs at this time.
 
 ## Future Development:
 ### Short Term:
-* Add support for keyboard typing of letters.
-* Add support for keyboard enter key to submit guess.
+* Fix display on mobile devices.
 * Add sounds for incorrect guess, correct guess & game over.
 
 ### Long Term:
 * Points tracker.
-* Support for physical keyboard.
-* Typed whole word guesses.
+
+## Acknowledgements:
+SVG files created using https://picsvg.com/
