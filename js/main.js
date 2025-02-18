@@ -168,8 +168,7 @@ function renderWord() {
   for (let i = 0; i < state.currentWord.length; i++) {
     letterElement = document.createElement('div');
     letterElement.innerText = state.currentWord[i];
-    letterElement.classList.add('keyboard-letter');
-    letterElement.classList.add('p-3', 'shadow', 'rounded-lg', 'bg-yellow-500');
+    letterElement.classList.add('p-3', 'shadow', 'rounded-lg', 'bg-yellow-500', 'ease-in-out');
     // Append the elements to the wordContainer in the DOM:
     elements.wordContainer.appendChild(letterElement);
     // Do animation for the most recent guessed letter:
@@ -208,17 +207,17 @@ function renderKeyboard() {
 }
 
 function animateKeypress(letterEl) {
-  letterEl.classList.add('-translate-y-4', 'scale-150');
+  letterEl.classList.add('-translate-y-4', 'scale-150', 'ease-in-out');
+  // letterEl.classList.add('-translate-y-4', 'scale-150');
   setTimeout(() => {
-    letterEl.classList.remove('-translate-y-4', 'scale-150');
+    letterEl.classList.remove('-translate-y-4', 'scale-150', 'ease-in-out');
+    // letterEl.classList.remove('-translate-y-4', 'scale-150');
   }, 300)
 }
 
 function animateRevealLetter(letterEl) {
-  // letterEl.classList.add('-translate-y-4', 'scale-150');
   letterEl.classList.add('animate-ping');
   setTimeout(() => {
-    // letterEl.classList.remove('-translate-y-4', 'scale-150');
     letterEl.classList.remove('animate-ping');
   }, 300)
 }
