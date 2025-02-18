@@ -225,6 +225,7 @@ function animateRevealLetter(letterEl) {
 }
 
 function animateWinGame(wordEl) {
+  // Pop-up the letters one-by-one in sequence:
   for (let i = 0; i < wordEl.children.length; i++) {
     setTimeout(() => {
       wordEl.children[i].classList.add('-translate-y-4');
@@ -233,6 +234,7 @@ function animateWinGame(wordEl) {
       wordEl.children[i].classList.remove('-translate-y-4');
     }, 100 * i + 200);
   }
+  // Briefly enlarge all the letters:
   for (let i = 0; i < wordEl.children.length; i++) {
     setTimeout(() => {
       wordEl.children[i].classList.add('scale-115');
@@ -245,10 +247,13 @@ function animateWinGame(wordEl) {
 
 function animateLoseGame(wordEl) {
   for (let i = 0; i < wordEl.children.length; i++) {
+    // Apply animation only to letters that haven't been found:
     if (state.currentWord[i] !== state.randomWordArray[i]) {
+      // Remove existing background, add red background and enlarge:
       wordEl.children[i].classList.remove('bg-yellow-500');
       wordEl.children[i].classList.add('duration-1500', 'bg-red-500', 'scale-115');
       wordEl.children[i].innerText = state.randomWordArray[i];
+      // Remove enlargement after brief period of time:
       setTimeout(() => {
         wordEl.children[i].classList.remove('scale-115');
       }, 1500);
