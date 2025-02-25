@@ -168,7 +168,7 @@ function renderWord() {
   for (let i = 0; i < state.currentWord.length; i++) {
     letterElement = document.createElement('div');
     letterElement.innerText = state.currentWord[i];
-    letterElement.classList.add('py-2', 'w-1/11', 'shadow', 'rounded-md', 'bg-yellow-500', 'transition');
+    letterElement.classList.add('py-1.5', 'w-1/11', 'shadow', 'rounded-md', 'bg-yellow-500', 'transition');
     // Append the elements to the wordContainer in the DOM:
     elements.wordContainer.appendChild(letterElement);
     // Do animation for the most recent guessed letter:
