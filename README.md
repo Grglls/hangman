@@ -1,9 +1,11 @@
 # Hangman In Browser Game - Version 1.0
 https://grglls.github.io/hangman/
 
-This website is a broswer version of the game 'Hangman' made using HTML, CSS and JavaScript.
+This project is a broswer version of the game 'Hangman' made using HTML, CSS and JavaScript.
 
-The game adopts the Model-View-Controller (MVC) approach for the game's architecture.
+The game adopts the Model-View-Controller (MVC) approach for the code's architecture.
+
+The CSS styling uses the Tailwind framework.
 
 ## How to Play:
 * Guess the randomly generated word letter by letter. 
@@ -16,11 +18,11 @@ No known bugs at this time.
 
 ## Future Development:
 ### Short Term:
-* Fix display on mobile devices.
 * Add sounds for incorrect guess, correct guess & game over.
 
 ### Long Term:
 * Points tracker.
+* Daily mode.
 
 ## Acknowledgements:
 SVG files created using https://picsvg.com/
