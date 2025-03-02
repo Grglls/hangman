@@ -25,4 +25,7 @@ No known bugs at this time.
 * Daily mode.
 
 ## Acknowledgements:
+Word list sourced from:
+https://github.com/dariusk/corpora/blob/master/data/words/common.json
+
 SVG files created using https://picsvg.com/
