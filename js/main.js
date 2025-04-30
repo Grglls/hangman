@@ -1,14 +1,11 @@
-/*------------------------- version -------------------------*/
-console.log('version 1.0');
-
 /*------------------------- constants -------------------------*/
-// Word list sourced from:
-// https://github.com/dariusk/corpora/blob/master/data/words/common.json
+const MAX_GUESSES = 7;
+const MIN_WORD_LENGTH = 8;
 
-// Save the words longer than 7 letters into an array:
+// Save the words of desired length to an array:
 const WORDS_SORTED = [];
 for (let i = 0; i < ALL_WORDS.commonWords.length; i++) {
-  if (ALL_WORDS.commonWords[i].length > 7) {
+  if (ALL_WORDS.commonWords[i].length >= MIN_WORD_LENGTH) {
     WORDS_SORTED.push(ALL_WORDS.commonWords[i]);
   };
 };
@@ -55,8 +52,7 @@ function init () {
 
     for (const key of keyboardRow) {
       // Remove and red and green backgrounds for letters guessed:
-      key.classList.remove('bg-red-500');
-      key.classList.remove('bg-green-500');
+      key.classList.remove('bg-red-500', 'bg-green-500');
       // Re-add the white background class back in:
       key.classList.add('bg-white');
     };
@@ -126,7 +122,7 @@ function randomWord(array) {
 
 function checkWinner() {
   // Check if all the guesses have been used up.
-  if (state.incorrectGuesses === 7) {
+  if (state.incorrectGuesses === MAX_GUESSES) {
     return 'loss';
   // Otherwise check if the currentWord array matches the randomWord array:
   } else if (state.currentWord.every((value, index) => value === state.randomWordArray[index])) {
