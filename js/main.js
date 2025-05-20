@@ -23,6 +23,7 @@ const state = {
 /*------------------------- cached elements  -------------------------*/
 const elements = {
   diagram: document.getElementById('diagram'),
+  guessesContainer: document.getElementById('guesses-container'),
   messageContainer: document.getElementById('message-container'),
   wordContainer: document.getElementById('word-container'),
   keyboardContainer: document.getElementById('keyboard-container'),
@@ -134,6 +135,7 @@ function checkWinner() {
 
 function render() {
   renderDiagram();
+  renderGuesses();
   renderMessage();
   renderWord();
   renderKeyboard();
@@ -143,6 +145,10 @@ function renderDiagram() {
   // Set the image to that corresponding to the number of incorrect guesses:
   elements.diagram.setAttribute('src', `assets/images/hangman-${ state.incorrectGuesses }.svg`);
   elements.diagram.setAttribute('alt', `${ state.incorrectGuesses } incorrect guesses`);
+}
+
+function renderGuesses() {
+  elements.guessesContainer.innerText = (MAX_GUESSES - state.incorrectGuesses) + ' guesses remaining';
 }
 
 function renderMessage() {
