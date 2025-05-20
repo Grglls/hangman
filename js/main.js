@@ -155,10 +155,16 @@ function renderMessage() {
   // Either say 'guess a letter' or 'gameover' or 'winner'
   if (state.result === null) {
     elements.messageContainer.innerText = 'Guess a letter:';
+    elements.messageContainer.classList.remove('bg-red-500', 'bg-green-500');
+    elements.messageContainer.classList.add('bg-slate-700');
   } else if (state.result === 'win') {
     elements.messageContainer.innerText = 'You win!';
+    elements.messageContainer.classList.remove('bg-slate-700');
+    elements.messageContainer.classList.add('bg-green-500');
   } else if (state.result === 'loss') {
     elements.messageContainer.innerText = 'Game Over!';
+    elements.messageContainer.classList.remove('bg-slate-700');
+    elements.messageContainer.classList.add('bg-red-500');
   }
 }
 
