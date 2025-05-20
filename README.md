@@ -6,10 +6,10 @@ The game adopts the Model-View-Controller (MVC) design pattern for the code's ar
 [Try it out.](https://grglls.github.io/hangman/)
 
 ## Screenshots:
-<img src="assets/screenshots/1_start.png" alt="new game" width="24%">
-<img src="assets/screenshots/2_playing.png" alt="playing the game" width="24%">
-<img src="assets/screenshots/3_lose.png" alt="losing game" width="24%">
-<img src="assets/screenshots/4_win.png" alt="winning game" width="24%">
+<img src="assets/screenshots/1_start.png" alt="new game" style="width: 24%;">
+<img src="assets/screenshots/2_playing.png" alt="playing the game" style="width: 24%;">
+<img src="assets/screenshots/3_lose.png" alt="losing game" style="width: 24%;">
+<img src="assets/screenshots/4_win.png" alt="winning game" style="width: 24%;">
 
 ## Technologies Used:
 * HTML: A single index page that sets up the wireframe of the game.
