@@ -12,8 +12,8 @@ The game adopts the Model-View-Controller (MVC) design pattern for the code's ar
 
 ## Technologies Used:
 * HTML: A single index page that sets up the wireframe of the game.
-* CSS: The Tailwind CSS framework.
-* JavaScript: Vanilla JS to handle the game's logic and manipulate the DOM.
+* CSS: To provide the styling using the Tailwind CSS framework.
+* JavaScript: To handle the game's logic and manipulate the DOM.
 
 ## How to Play:
 * Guess the randomly selected word letter by letter.
@@ -24,8 +24,8 @@ The game adopts the Model-View-Controller (MVC) design pattern for the code's ar
 ## Future Development Plans:
 * Add sounds for incorrect guess, correct guess, win & game over.
 * Keep track of wins/losses on consecutive games, count streak of consecutive wins.
-* Points tracker.
-* Daily mode.
+* Add a points tracker.
+* Add a daily mode.
 
 ## Known Bugs:
 No known bugs at this time.
